@@ -1,4 +1,4 @@
-#!/usr/bin/env python3.5
+#!/usr/bin/python
 
 # -------------------------------------------------------------------------------
 # This file is part of Phobos, a Blender Add-On to edit robot models.
