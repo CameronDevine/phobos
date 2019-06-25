@@ -24,11 +24,11 @@ before_install:
 
   - sudo apt-get install python-pip
 
-  - sudo pip install PyYaml
+  - sudo -H pip install PyYaml
 
-  - sudo pip install numpy
+  - sudo -H pip install numpy
 
-  - sudo pip install importlib
+  - sudo -H pip install importlib
 
 install:
   # create temp directory where we store a recent blender version
