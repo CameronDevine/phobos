@@ -24,9 +24,9 @@ before_install:
 
   - sudo apt-get install python-pip
 
-  - sudo pip3.5 install PyYaml
+  - sudo pip install PyYaml
 
-  - sudo pip3.5 install numpy
+  - sudo pip install numpy
 
 install:
   # create temp directory where we store a recent blender version
