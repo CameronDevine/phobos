@@ -32,7 +32,7 @@ import os.path as path
 import sys
 import shutil
 from distutils.dir_util import copy_tree
-import importlib.util
+import importlib
 
 scriptinformation = """
 This is the setup script for Phobos.
