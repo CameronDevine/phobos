@@ -28,6 +28,8 @@ before_install:
 
   - sudo pip install numpy
 
+  - sudo pip install importlib
+
 install:
   # create temp directory where we store a recent blender version
   - mkdir tmp && cd tmp
