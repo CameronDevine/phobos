@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
-import bpy
 import phobos
 import unittest
 
 class TestBlenderUtils(unittest.TestCase):
 
     def test_compileEnumPropertyList(self):
-        testlist = phobos.test_compileEnumPropertyList([1, 2, 3])
+        testlist = phobos.utils.blender.compileEnumPropertyList([1, 2, 3])
         self.assertTupleEqual(testlist, ((1, 1, 1), (2, 2, 2), (3, 3, 3)))
 
 class TestGeneralUtils(unittest.TestCase):
@@ -98,7 +97,7 @@ class TestGeneralUtils(unittest.TestCase):
         self.assertListEqual(phobos.utils.general.sortListsInDict(testdict, reverse=True) ,targetdict)
         # TODO adjust docstring to include string only?
 
-    def test_roundFloatsInDict(self)
+    def test_roundFloatsInDict(self):
         testdict = {'a': 1, 'b': [12.545, -3.111, -3.894, 15.25, -0.111], 'c': ['delta', 'alpha', 'gamma']}
         targetdict = {'a': 1, 'b': [13., -3., -4., 15., 0.], 'c': ['delta', 'alpha', 'gamma']}
         self.assertEqual(phobos.utils.general.roundFloatsInDict(testdict, 0), targetdict)
@@ -109,6 +108,7 @@ class TestGeneralUtils(unittest.TestCase):
 
     def test_datetimeFromIso(self):
         # TODO add test case for ISO time
+        pass
 
     def test_outerProduct(self):
         a = [0, 1, 2]
@@ -177,3 +177,14 @@ class TestNamingUtils(unittest.TestCase):
         target = 'robot::bert'
         self.assertEqual(phobos.utils.naming.stripNamespaceFromName(testname), target)
 
+
+# we have to manually invoke the test runner here, as we cannot use the CLI
+blenderutilstest = unittest.defaultTestLoader.loadTestsFromTestCase(TestBlenderUtils)
+generalutilstest = unittest.defaultTestLoader.loadTestsFromTestCase(TestGeneralUtils)
+ioutilstest = unittest.defaultTestLoader.loadTestsFromTestCase(TestIOUtils)
+namingutilstest = unittest.defaultTestLoader.loadTestsFromTestCase(TestNamingUtils)
+
+unittest.TextTestRunner().run(blenderutilstest)
+unittest.TextTestRunner().run(generalutilstest)
+unittest.TextTestRunner().run(ioutilstest)
+unittest.TextTestRunner().run(namingutilstest)
