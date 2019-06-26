@@ -49,9 +49,11 @@ install:
 
   # now create a symlink to the addon within blenders addons directory
   # this is important, because otherwhise blender would not be able to load the addon
-  - sudo ln -s ${PWD}/phobos ${PWD}/tmp/blender/2.79/scripts/addons/phobos
-  - python ${PWD}/setup.py --installto ${PWD}/tmp/blender/2.79/scripts/addons/phobos2
-  - ls ${PWD}/tmp/blender/2.79/scripts/addons/phobos2
+  # - sudo ln -s ${PWD}/phobos ${PWD}/tmp/blender/2.79/scripts/addons/phobos
+
+  # instead we use the setup.py to install the addon to the folder
+  - python ${PWD}/setup.py --installto ${PWD}/tmp/blender/2.79/scripts/addons/phobos
+  - ls ${PWD}/tmp/blender/2.79/scripts/addons/phobos
 
 # Finally start our test runner passing it the blender executable from the downloaded blender release
 script: python testrunner.py ./tmp/blender/blender
