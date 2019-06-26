@@ -11,7 +11,7 @@ branches:
 # Define which python version to build against.
 # As blender comes bundled with it's own python you can use just one version if you like
 python:
-  - "3.5"
+  - "3.5.7"
 
 before_install:
   # update apt-gets repository sources
