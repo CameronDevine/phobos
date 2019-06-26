@@ -48,7 +48,7 @@ install:
   - cd ..
 
   # - sudo python -V
-  # - sudo python -c "import importlib.util as test"
+  - python -c "import site.getsitepackages as test"
 
   # now create a symlink to the addon within blenders addons directory
   # this is important, because otherwhise blender would not be able to load the addon
