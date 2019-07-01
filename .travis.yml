@@ -3,6 +3,11 @@ language: python
 
 dist: xenial
 
+# safelist
+branches:
+  only:
+  - master
+
 # Define which python version to build against.
 # As blender comes bundled with it's own python you can use just one version if you like
 python:
@@ -52,3 +57,4 @@ install:
 
 # Finally start our test runner passing it the blender executable from the downloaded blender release
 script: python testrunner.py ./tmp/blender/blender
+
